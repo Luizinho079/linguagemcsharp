@@ -1,32 +1,23 @@
 ﻿using System;
 
-namespace ListaByte
+namespace TipoByte
 {
     class Program
     {
         static void Main(string[] args)
         {
-            object[] valores = { 4, "gota", 300, 500, 3 };
-            byte[] vbyte = new byte[5];
-            string[] vtextos = new string[5];
-            string[] vforafaixa = new string[5];
+            try
 
-            for (int i =0; i< valores.Length; i++)
-            {
-                try
-                {
-                    var v = Convert.ToByte(valores[i];
-                    vbytes[i] = v;
-                }
-                catch (FormatException)
-                {
-                    vtextos[i] = valores[i].ToString();
 
-                }
-                catch (OverFlowException)
-                {
-                    vforafaixa[i] = Convert.ToInt32(valores[i]);
-                }
-        }
+                byte x = Convert.ToByte(Console.ReadLine());
+                Console.WriteLine("Os valores digitados são: {0}, x)", x);
+
+            catch (OverFlowException)
+
+               Console.WriteLine("O valor digitado esta fora o máximo. O máximo é 255");
+
+            catch (FormaException)
+
+               Console.WriteLine("Você digitou um texto. Só é aceitável um número de 0 a 255");
     }
 }
